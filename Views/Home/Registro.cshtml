@@ -1,0 +1,53 @@
+@model Practica_03.Models.RegistroAbonoModel
+
+<div class="page-title mb-4">
+    <h3>Registro de Abono</h3>
+    <p class="text-subtitle text-muted">Registre un pago parcial de una compra pendiente.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8 col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Formulario de Abono</h4>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Registro", "Home", FormMethod.Post, new { @id = "FormRegistro" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @Html.ValidationSummary(false)
+                        </div>
+                    }
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.IdCompra, "Compra", new { @class = "form-label" })
+                        @Html.DropDownListFor(m => m.IdCompra,
+                            Model.ComprasPendientes,
+                            "Seleccione una compra...",
+                            new { @class = "form-select", @id = "ddlCompra" })
+                        @Html.ValidationMessageFor(m => m.IdCompra, null, new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.SaldoAnterior, "Saldo Anterior", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.SaldoAnterior, "{0:F2}", new { @class = "form-control", @id = "txtSaldoAnterior", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.Abono, "Abono", new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.Abono, "{0:F2}", new { @class = "form-control", @id = "txtAbono", @placeholder = "Ingrese el monto a abonar" })
+                        @Html.ValidationMessageFor(m => m.Abono, null, new { @class = "text-danger" })
+                        <span id="mensajeValidacion" class="text-danger" style="display:none;"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="btnAbonar">Abonar</button>
+                    <a href="@Url.Action("Consulta", "Home")" class="btn btn-secondary ms-2">Cancelar</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+/* Banner de bienvenida */
+.bienvenida-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 28px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #435ebe 0%, #6c8ee8 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(67, 94, 190, 0.30);
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.bienvenida-banner i {
+    font-size: 1.3rem;
+    opacity: .85;
+}
+
+/* Bienvenida en el header */
+.bienvenida-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 18px;
+    background: linear-gradient(135deg, #435ebe 0%, #5a78d1 100%);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(67, 94, 190, 0.35);
+}
+
+.bienvenida-icono {
+    font-size: 1.6rem;
+    color: #fff;
+    opacity: .92;
+}
+
+.bienvenida-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.bienvenida-titulo {
+    font-size: .95rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: .3px;
+}
+
+.bienvenida-subtitulo {
+    font-size: .75rem;
+    color: rgba(255,255,255,.78);
+    font-weight: 400;
+}
+
+/* Tarjetas con sombra más suave */
+.card {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.08);
+}
+
+.card-header {
+    border-radius: 14px 14px 0 0 !important;
+    background: linear-gradient(135deg, #435ebe 0%, #5a78d1 100%);
+    padding: 14px 20px;
+}
+
+.card-header h4 {
+    color: #fff;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Tabla más limpia */
+.table thead th {
+    background-color: #f0f3ff;
+    color: #435ebe;
+    font-weight: 700;
+    border-bottom: 2px solid #d1d9f5;
+    font-size: .88rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f7ff;
+}
+
+/* Badges con mejor forma */
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+/* Botón principal */
+.btn-primary {
+    background: linear-gradient(135deg, #435ebe 0%, #5a78d1 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(67, 94, 190, 0.35);
+    transition: opacity .2s;
+}
+
+.btn-primary:hover {
+    opacity: .88;
+}
+
+/* Inputs */
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 1.5px solid #dee2e6;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #435ebe;
+    box-shadow: 0 0 0 3px rgba(67, 94, 190, .15);
+}
+
+/* Títulos de página */
+.page-title h3 {
+    font-weight: 800;
+    color: #435ebe;
+}
+
+.page-title p {
+    color: #888;
+    font-size: .9rem;
+}

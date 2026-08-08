@@ -1,0 +1,58 @@
+@model List<Practica_03.EF.Principal>
+
+<div class="page-title mb-4">
+    <h3>Consulta de Compras</h3>
+    <p class="text-subtitle text-muted">Visualización de todos los productos ordenados por estado.</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Listado de Compras</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped mb-0">
+                <thead>
+                    <tr>
+                        <th>Compra</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Saldo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id_Compra</td>
+                                <td>@item.Descripcion</td>
+                                <td>@item.Precio.ToString("N2")</td>
+                                <td>@item.Saldo.ToString("N2")</td>
+                                <td>
+                                    @if (item.Estado == "Pendiente")
+                                    {
+                                        <span class="badge bg-warning">Pendiente</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">Cancelado</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5">No hay compras registradas.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
