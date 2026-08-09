@@ -5,6 +5,15 @@
     <p class="text-subtitle text-muted">Visualización de todos los productos ordenados por estado.</p>
 </div>
 
+@if (TempData["Exito"] != null)
+{
+    <div class="alert alert-success alert-dismissible d-flex align-items-center gap-2 mb-4" role="alert">
+        <i class="bi bi-check-circle-fill fs-5"></i>
+        <span>@TempData["Exito"]</span>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+}
+
 <div class="card">
     <div class="card-header">
         <h4 class="card-title">Listado de Compras</h4>

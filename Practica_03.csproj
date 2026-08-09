@@ -137,7 +137,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="EF\KN_BDEntities.cs" />
+    <Compile Include="EF\Practica03Model.Context.cs" />
     <Compile Include="EF\Principal.cs" />
     <Compile Include="EF\Abono.cs" />
     <Compile Include="Global.asax.cs">
@@ -156,6 +156,13 @@
     <Content Include="Content\perfect-scrollbar.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="EF\Practica03Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Practica03Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EmbeddedResource Include="EF\Practica03Model.csdl" />
+    <EmbeddedResource Include="EF\Practica03Model.ssdl" />
+    <EmbeddedResource Include="EF\Practica03Model.msl" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Content\fonts\bootstrap-icons.woff" />
     <Content Include="Content\fonts\bootstrap-icons.woff2" />

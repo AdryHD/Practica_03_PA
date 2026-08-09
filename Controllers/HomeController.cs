@@ -14,7 +14,7 @@ namespace Practica_03.Controllers
         {
             try
             {
-                using (var context = new KN_BDEntities())
+                using (var context = new Practica03Entities())
                 {
                     var datos = context.Principal
                         .OrderBy(item => item.Estado == "Pendiente" ? 0 : 1)
@@ -52,12 +52,14 @@ namespace Practica_03.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Registro(RegistroAbonoModel model)
+        public ActionResult Registro([Bind(Exclude = "SaldoAnterior,ComprasPendientes")] RegistroAbonoModel model)
         {
             try
             {
                 model.ComprasPendientes = CargarComprasPendientes();
                 ViewBag.ScriptFile = "registro.js";
+
+                ModelState.Remove("SaldoAnterior");
 
                 if (!ModelState.IsValid)
                 {
@@ -70,7 +72,7 @@ namespace Practica_03.Controllers
                     return View(model);
                 }
 
-                using (var context = new KN_BDEntities())
+                using (var context = new Practica03Entities())
                 {
                     var compra = context.Principal
                         .FirstOrDefault(item => item.Id_Compra == model.IdCompra.Value);
@@ -118,6 +120,7 @@ namespace Practica_03.Controllers
                         return View(model);
                     }
 
+                    TempData["Exito"] = "El abono se registró satisfactoriamente.";
                     return RedirectToAction("Consulta", "Home");
                 }
             }
@@ -132,7 +135,7 @@ namespace Practica_03.Controllers
         {
             try
             {
-                using (var context = new KN_BDEntities())
+                using (var context = new Practica03Entities())
                 {
                     var compra = context.Principal
                         .Where(item => item.Id_Compra == idCompra && item.Estado == "Pendiente")
@@ -177,7 +180,7 @@ namespace Practica_03.Controllers
 
         private List<SelectListItem> CargarComprasPendientes()
         {
-            using (var context = new KN_BDEntities())
+            using (var context = new Practica03Entities())
             {
                 return context.Principal
                     .Where(item => item.Estado == "Pendiente")

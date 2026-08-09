@@ -1,3 +1,17 @@
+/* Alerta de éxito */
+.alert-success {
+    background: linear-gradient(135deg, #4fbe87 0%, #3da872 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(79, 190, 135, 0.30);
+    font-weight: 600;
+}
+
+.alert-success .btn-close {
+    filter: brightness(0) invert(1);
+}
+
 /* Banner de bienvenida */
 .bienvenida-banner {
     display: flex;
