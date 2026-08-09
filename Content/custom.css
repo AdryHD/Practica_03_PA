@@ -1,4 +1,3 @@
-/* Alerta de éxito */
 .alert-success {
     background: linear-gradient(135deg, #4fbe87 0%, #3da872 100%);
     color: #fff;
@@ -12,7 +11,6 @@
     filter: brightness(0) invert(1);
 }
 
-/* Banner de bienvenida */
 .bienvenida-banner {
     display: flex;
     align-items: center;
@@ -35,7 +33,6 @@
     opacity: .85;
 }
 
-/* Bienvenida en el header */
 .bienvenida-header {
     display: flex;
     align-items: center;
@@ -71,7 +68,6 @@
     font-weight: 400;
 }
 
-/* Tarjetas con sombra más suave */
 .card {
     border: none;
     border-radius: 14px;
@@ -91,7 +87,6 @@
     font-weight: 700;
 }
 
-/* Tabla más limpia */
 .table thead th {
     background-color: #f0f3ff;
     color: #435ebe;
@@ -106,7 +101,6 @@
     background-color: #f5f7ff;
 }
 
-/* Badges con mejor forma */
 .badge {
     padding: 5px 12px;
     border-radius: 20px;
@@ -114,7 +108,6 @@
     font-weight: 600;
 }
 
-/* Botón principal */
 .btn-primary {
     background: linear-gradient(135deg, #435ebe 0%, #5a78d1 100%);
     border: none;
@@ -129,7 +122,6 @@
     opacity: .88;
 }
 
-/* Inputs */
 .form-control,
 .form-select {
     border-radius: 8px;
@@ -143,7 +135,6 @@
     box-shadow: 0 0 0 3px rgba(67, 94, 190, .15);
 }
 
-/* Títulos de página */
 .page-title h3 {
     font-weight: 800;
     color: #435ebe;
